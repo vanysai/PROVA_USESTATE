@@ -1,38 +1,41 @@
 import React from 'react';
-import { View, StyleSheet, Button, FlatList, TextInput} from 'react-native';
+import { View, Text, FlatList, StyleSheet} from 'react-native';
+import { Home } from '../screens/ScreenA';
 
+const nomes = ['Enzo Batista', '23333333390', '24/09/2005', 'rua cadivali', '97',
+]
 
-export function ScreenB() {
-    const items = ["itemA", "itemB", "itemC"]
-    const [nome, setNome] = useState ("")
-        function handleName (text) {
-          setNome (text)
-    )
-}
-const renderItem = ({item}) => (
-    <Text> {item} </Text>
-
-  ) return (
+export function Cadastro() {
+  return (
     <View style={styles.container}>
-        <FlatList
-        data = {items}
-        renderItem = {renderItem}
-        />
-        <TextInput
-          style = {styles.input}
-          id = 'nome'
-          value = {nome}
-          onChangeText = {(text) => handleName (text) }
-        />
-        <Text> {nome} </Text>
+
+      <Text style={styles.title}>Dados do agendamento da consulta</Text>
+
+      <FlatList
+        data={nomes}
+        renderItem={({ item }) => (
+          <View style={styles.nomeView}>
+            <Text style={styles.nomeItem}>{item}</Text>
+          </View>
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
+
     </View>
   );
 }
-
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "blue",
-        justifyContent: "center"
-    }
-})
+  container: {
+    flex: 1,
+    backgroundColor: '#fefefe',
+    position: 'relative',
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  title:{
+    fontSize:16,
+    padding: 50
+  },
+
+});
