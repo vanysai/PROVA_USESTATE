@@ -1,24 +1,30 @@
 import React from 'react';
-import { View, StyleSheet, Button, FlatList, Text} from 'react-native';
+import { View, StyleSheet, Button, FlatList, TextInput} from 'react-native';
 
 
 export function ScreenB() {
     const items = ["itemA", "itemB", "itemC"]
-    const renderItem = ({item}) => (
-        <text>{item}</text>
+    const [nome, setNome] = useState ("")
+        function handleName (text) {
+          setNome (text)
     )
-  return (
+}
+const renderItem = ({item}) => (
+    <Text> {item} </Text>
+
+  ) return (
     <View style={styles.container}>
         <FlatList
         data = {items}
         renderItem = {renderItem}
         />
-        <Text input
-        <button 
-        title='Voltar para A' 
-        color="#fff">
-
-        </button>
+        <TextInput
+          style = {styles.input}
+          id = 'nome'
+          value = {nome}
+          onChangeText = {(text) => handleName (text) }
+        />
+        <Text> {nome} </Text>
     </View>
   );
 }
