@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text} from 'react-native';
+import { View, StyleSheet, Text, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
 import { Cadastro } from '../screens/ScreenB';
@@ -10,6 +10,8 @@ export function Home() {
   const navigation = useNavigation();
   return (
       <View style={styles.container}>
+        <Image source={require('../../assets/home.png')}
+        style={styles.imagem}/>
           <Text style={styles.title}>Bem-Vindo a tela Home</Text>
           <TouchableOpacity  onPress={() => navigation.navigate("Cadastro")} style={styles.button}>
               <Text style={styles.buttonText}>
@@ -28,7 +30,7 @@ export function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fefefe',
+    backgroundColor: '#f7eee9',
     position: 'relative',
     display:'flex',
     alignItems:'center',
@@ -53,5 +55,11 @@ const styles = StyleSheet.create({
     fontWeight:'700',
     color:'white'
   },
+  imagem:{
+    width:1000,
+    height:180,
+    resizeMode:"contain",
+    marginBottom:100
+  }
 
 });

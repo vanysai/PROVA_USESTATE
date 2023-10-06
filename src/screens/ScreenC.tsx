@@ -38,15 +38,17 @@ export function Agendamento() {
   return (
     
     <View style={styles.container}>
+      <Image source={require('../../assets/home.png')}
+        style={styles.imagem}/>
       <Text style={styles.title}>Digite seus dados para agendar a consulta</Text>
 
-      <TextInput style={styles.input} value={nome} onChangeText={setNome} placeholder=' nome completo'></TextInput>
-      <TextInput style={styles.input} value={cpf} onChangeText={setCpf} placeholder=' seu cpf'></TextInput>
-      <TextInput style={styles.input} value={dataNasc} onChangeText={setDataNasc} placeholder=' data de nascimento'></TextInput>
-      <TextInput style={styles.input} value={endereco} onChangeText={setEndereco} placeholder=' endereço'></TextInput>
-      <TextInput style={styles.input} value={idade} onChangeText={setIdade} placeholder=' idade'></TextInput>
-      <TextInput style={styles.input} value={valor} onChangeText={setValor} keyboardType='numeric' placeholder='valor'></TextInput>
-      <TextInput style={styles.input} value={pagamento} onChangeText={setPagamento} keyboardType='text' placeholder='pagamento'></TextInput>
+      <TextInput style={styles.input} value={nome} onChangeText={setNome} placeholder='Seu nome completo'></TextInput>
+      <TextInput style={styles.input} value={cpf} onChangeText={setCpf} placeholder='Seu cpf'></TextInput>
+      <TextInput style={styles.input} value={dataNasc} onChangeText={setDataNasc} placeholder='Sua data de nascimento'></TextInput>
+      <TextInput style={styles.input} value={endereco} onChangeText={setEndereco} placeholder='Seu endereço'></TextInput>
+      <TextInput style={styles.input} value={idade} onChangeText={setIdade} placeholder='DIgite a idade'></TextInput>
+      <TextInput style={styles.input} value={valor} onChangeText={setValor} keyboardType='numeric' placeholder='Valor da consulta'></TextInput>
+      <TextInput style={styles.input} value={pagamento} onChangeText={setPagamento} keyboardType='text' placeholder='Qual a forma do pagamento?'></TextInput>
 
       <TouchableOpacity style={styles.button} onPress={handleImpress}><Text style={styles.buttonText}>Cadastrar</Text></TouchableOpacity>
     </View>
@@ -55,19 +57,21 @@ export function Agendamento() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fefefe',
+        backgroundColor: '#f7eee9',
         position: 'relative',
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
       },
       input:{
-        width:230,
+        width:250,
         height:40,
         marginBottom:20,
-        borderRadius:5,
+        borderRadius:10,
         borderWidth:2,
-        borderColor:'pink'
+        borderColor:'pink',
+        fontWeight: '450',
+        backgroundColor: '#f1e8dc'
     
       },
       title:{
@@ -86,8 +90,14 @@ const styles = StyleSheet.create({
         marginTop:20
       },
       buttonText:{
-        fontWeight:'700',
+        fontWeight:'bold',
         color:'white',
      
       },
+      imagem:{
+        width:1000,
+        height:180,
+        resizeMode:"contain",
+        marginBottom:90
+      }
 })
